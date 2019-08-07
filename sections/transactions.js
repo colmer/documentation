@@ -31,8 +31,6 @@ export default [
           .then(function(ids) {
             books.forEach((book) => book.catalogue_id = ids[0]);
             return trx('books').insert(books);
-            });
-          });
       })
       .then(function(inserts) {
         console.log(inserts.length + ' new books saved.');
